@@ -1,0 +1,22 @@
+@font-face {
+  font-family: YouSheBiaoTiHei;
+  src: url('../font/YouSheBiaoTiHei.ttf');
+}
+
+
+html,
+body {
+  margin: 0;
+  font-family: MicrosoftYaHei;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-y: hidden;
+}
+
+code {
+  font-family: MicrosoftYaHei, monospace;
+}
+
+#root {
+  height: 100%;
+}

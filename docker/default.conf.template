@@ -1,0 +1,29 @@
+server {
+    listen       80;
+    server_name  localhost;
+    root  /app;
+
+    gzip on;
+    gzip_buffers 32 4k;
+    gzip_comp_level 6;
+    gzip_min_length 1k;
+    gzip_types application/javascript text/css text/xml;
+    gzip_vary on;
+
+    location ^~ /oss/ {
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        # 从环境变量取转发地址
+        proxy_pass ${OSS_URL};
+    }
+    location ^~ /yunli/ {
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        # 从环境变量取转发地址
+        proxy_pass ${MID_PLATE_URL};
+    }
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
