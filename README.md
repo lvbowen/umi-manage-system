@@ -62,3 +62,8 @@ $ yarn start
 
 ## 效果图
 ![效果国](/layout.jpg)
+
+## 其他
+- react-loadable 设置成动态路由组件，同时 config.js 开启 dynamicImport 按需加载，这样每个页面就可以打包一个 js;
+
+  └── package.json
